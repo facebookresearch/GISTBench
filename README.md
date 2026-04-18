@@ -1,6 +1,6 @@
 <p align="center">
   <img src="https://img.shields.io/github/stars/facebookresearch/GISTBench?style=for-the-badge&logo=github&color=yellow" alt="GitHub Stars">
-  <img src="https://img.shields.io/badge/Status-Coming%20Soon-brightgreen?style=for-the-badge" alt="Status: Coming Soon">
+  <img src="https://img.shields.io/badge/Status-Released-brightgreen?style=for-the-badge" alt="Status: Released">
   <img src="https://img.shields.io/badge/License-CC--BY--NC%204.0-blue?style=for-the-badge" alt="License: CC-BY-NC 4.0">
 </p>
 
@@ -16,32 +16,72 @@
 
 ---
 
-> **Code, dataset, and paper coming soon!**
->
-> We are preparing the official public release of GISTBench. Star and watch this repository to get notified the moment everything drops.
+## Quick Start
 
----
+```bash
+pip install -e ".[dev]"
+export OPENAI_API_KEY=your-key
 
-## Why Star?
+# Evaluate 3+ models — oracle is built automatically from predictions
+gistbench run -d data.csv -m gpt-4o      --results-db results.db
+gistbench run -d data.csv -m gpt-4o-mini --results-db results.db
+gistbench run -d data.csv -m gpt-4-turbo --results-db results.db  # scores all 3 models
+```
 
-- **Be the first to know** — GitHub will notify you as soon as we release the code and dataset.
-- **Help others discover GISTBench** — Stars increase visibility and help the research community find this work.
-- **Show your interest** — Community engagement helps us prioritize the release.
+See [INSTRUCTIONS.md](INSTRUCTIONS.md) for full documentation.
 
-## What to Expect
+## Smoke Test
 
-- Full benchmark code and evaluation scripts
-- The complete GISTBench dataset
-- Pre-computed results and leaderboard
-- Paper and documentation
+Validate the full pipeline (extraction → IG → IS → taxonomy → scoring) end to end. Both the bundled mock dataset and the real `synthetic` split ship with bundled oracles, so a single model run is enough.
 
----
+```bash
+export OPENAI_API_KEY=your-key
 
-<p align="center">
-  <a href="https://github.com/facebookresearch/GISTBench">
-    <img src="https://img.shields.io/badge/Star%20⭐%20this%20repo%20to%20stay%20updated-Click%20here-blue?style=for-the-badge&logo=github" alt="Star this repo">
-  </a>
-</p>
+# Default: both datasets (mock + synthetic), gpt-4o-mini, 5 users, no report
+gistbench smoke-test
+
+# Pick a single dataset and write a timestamped report into reports/
+gistbench smoke-test --datasets mock --report-dir reports
+gistbench smoke-test --datasets synthetic -n 10 --report-dir reports
+
+# Or pin to a specific filename
+gistbench smoke-test --datasets mock --report report.md
+
+# Local model via Ollama / vLLM / LM Studio (no API key needed)
+gistbench smoke-test --base-url http://localhost:11434/v1 --models llama3
+```
+
+The command exits non-zero if any case fails.
+
+## What is GISTBench?
+
+GISTBench evaluates how well LLMs understand users from their engagement history by measuring two complementary axes:
+
+- **Interest Groundedness (IG)**: Are the extracted interests actually supported by the user's engagement data?
+- **Interest Specificity (IS)**: Can the model cite the *specific* items that support each interest?
+
+The final score is the harmonic mean of IG and IS.
+
+### How It Works
+
+1. **Run 3+ models** on the same dataset — each model extracts interests and cites evidence
+2. **Oracle is built automatically** from the union of verified interests across all models
+3. **All models are rescored** using the cross-model oracle
+
+![GISTBench Pipeline](gistbench/assets/dataflow.svg)
+
+## Supported Datasets
+
+| Dataset | Content | Signals |
+|---|---|---|
+| `synthetic` | Videos | explicit+, implicit+, implicit- |
+| `kuairec` | Videos | explicit+, implicit+, implicit- |
+| `mind` | News | explicit+, implicit- |
+| `amazon_digital_music` | Songs | explicit+, implicit+, explicit- |
+| `yelp` | Stores | explicit+, implicit+, explicit- |
+| `goodreads` | Books | explicit+, implicit+, explicit- |
+
+Works with any OpenAI-compatible API (OpenAI, Ollama, vLLM, etc.) and custom datasets.
 
 ## License
 

@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gistbench"
+version = "0.1.0"
+description = "GISTBench: Groundedness & Interest Specificity Test Bench for user understanding"
+readme = "README.md"
+license = {text = "CC-BY-NC-4.0"}
+requires-python = ">=3.10"
+authors = [
+    {name = "Iordanis Fostiropoulos", email = "iordanis@meta.com"},
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: Other/Proprietary License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "click>=8.0",
+    "openai>=1.0",
+    "pandas>=1.5",
+    "datasets>=2.14",
+    "pyarrow>=10.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/facebookresearch/GISTBench"
+Repository = "https://github.com/facebookresearch/GISTBench"
+Dataset = "https://huggingface.co/datasets/facebook/gistbench"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+]
+
+[project.scripts]
+gistbench = "gistbench.cli:main"
+
+[tool.setuptools]
+packages = ["gistbench", "gistbench.prompts", "gistbench.steps", "gistbench.tests"]
+
+[tool.setuptools.package-data]
+gistbench = ["assets/*.json", "assets/*.csv", "assets/*.svg"]
+
+[tool.pytest.ini_options]
+testpaths = ["gistbench/tests"]
+markers = [
+    "e2e: end-to-end tests requiring OPENAI_API_KEY",
+]

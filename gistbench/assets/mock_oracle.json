@@ -1,0 +1,9 @@
+{
+  "dataset": "synthetic",
+  "description": "Oracle interest category IDs for the mock dataset. Each user's oracle is the set of category IDs where at least one model in a hypothetical ensemble would produce a verified interest. This represents the ground-truth denominator for IG Recall. See categories.csv for ID-to-name mapping.",
+  "oracle": {
+    "1": [44, 97, 110, 133, 146, 192, 243],
+    "2": [16, 31, 112, 268, 272],
+    "3": [86, 124, 206, 223]
+  }
+}

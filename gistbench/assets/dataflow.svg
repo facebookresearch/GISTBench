@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1100" viewBox="0 0 900 1100">
+  <defs>
+    <style>
+      .box { fill: #f8f9fa; stroke: #333; stroke-width: 2; rx: 8; ry: 8; }
+      .box-a { fill: #e3f2fd; stroke: #1565c0; stroke-width: 2; rx: 8; ry: 8; }
+      .box-b { fill: #fce4ec; stroke: #c62828; stroke-width: 2; rx: 8; ry: 8; }
+      .box-score { fill: #e8f5e9; stroke: #2e7d32; stroke-width: 2; rx: 8; ry: 8; }
+      .box-out { fill: #fff3e0; stroke: #e65100; stroke-width: 2; rx: 8; ry: 8; }
+      .title { font: bold 14px monospace; fill: #333; }
+      .subtitle { font: 12px monospace; fill: #555; }
+      .detail { font: 11px monospace; fill: #666; }
+      .arrow { stroke: #333; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .arrow-a { stroke: #1565c0; stroke-width: 2; fill: none; marker-end: url(#arrowhead-a); }
+      .arrow-b { stroke: #c62828; stroke-width: 2; fill: none; marker-end: url(#arrowhead-b); }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+    </marker>
+    <marker id="arrowhead-a" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#1565c0"/>
+    </marker>
+    <marker id="arrowhead-b" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#c62828"/>
+    </marker>
+  </defs>
+
+  <!-- Step 0: Input -->
+  <rect class="box" x="250" y="20" width="400" height="70"/>
+  <text class="title" x="450" y="45" text-anchor="middle">Engagement History</text>
+  <text class="detail" x="450" y="65" text-anchor="middle">user_id, object_id, object_text, interaction_type</text>
+
+  <!-- Arrow down -->
+  <line class="arrow" x1="450" y1="90" x2="450" y2="130"/>
+
+  <!-- Step 1: Interest Extraction -->
+  <rect class="box" x="250" y="130" width="400" height="80"/>
+  <text class="title" x="450" y="155" text-anchor="middle">Step 1: Interest Extraction</text>
+  <text class="subtitle" x="450" y="175" text-anchor="middle">(LLM inference)</text>
+  <text class="detail" x="450" y="195" text-anchor="middle">Output: list[Interest] with name, item_ids, rationale</text>
+
+  <!-- Three arrows branching -->
+  <line class="arrow-a" x1="350" y1="210" x2="170" y2="280"/>
+  <line class="arrow-a" x1="450" y1="210" x2="450" y2="280"/>
+  <line class="arrow-b" x1="550" y1="210" x2="730" y2="280"/>
+
+  <!-- Branch A1: IG -->
+  <rect class="box-a" x="30" y="280" width="280" height="200"/>
+  <text class="title" x="170" y="305" text-anchor="middle">Branch A1: IG</text>
+  <text class="subtitle" x="170" y="325" text-anchor="middle">Interest Groundedness</text>
+  <text class="detail" x="50" y="350">1. LLM judge filters cited</text>
+  <text class="detail" x="50" y="370">   evidence for relevance</text>
+  <text class="detail" x="50" y="395">2. Verify against engagement</text>
+  <text class="detail" x="50" y="415">   thresholds (3 imp+, 2 exp+)</text>
+  <text class="detail" x="50" y="440">3. Output: IGResult</text>
+  <text class="detail" x="50" y="460">   verified: bool per interest</text>
+
+  <!-- Branch A2: IS -->
+  <rect class="box-a" x="320" y="280" width="260" height="200"/>
+  <text class="title" x="450" y="305" text-anchor="middle">Branch A2: IS</text>
+  <text class="subtitle" x="450" y="325" text-anchor="middle">Interest Specificity</text>
+  <text class="detail" x="340" y="350">1. Build pool of 1000 objects</text>
+  <text class="detail" x="340" y="370">2. LLM removes overlaps</text>
+  <text class="detail" x="340" y="395">3. Test set: backing +</text>
+  <text class="detail" x="340" y="415">   distractors</text>
+  <text class="detail" x="340" y="440">4. LLM identifies backing</text>
+  <text class="detail" x="340" y="460">Output: ISResult (correct,</text>
+
+  <!-- Branch B: Taxonomy -->
+  <rect class="box-b" x="590" y="280" width="280" height="200"/>
+  <text class="title" x="730" y="305" text-anchor="middle">Branch B: Taxonomy</text>
+  <text class="subtitle" x="730" y="325" text-anchor="middle">Category Mapping</text>
+  <text class="detail" x="610" y="350">interest_name → category_id</text>
+  <text class="detail" x="610" y="375">325 categories from</text>
+  <text class="detail" x="610" y="395">categories.csv</text>
+  <text class="detail" x="610" y="420">LLM-based mapping</text>
+  <text class="detail" x="610" y="445">Cached in SQLite</text>
+  <text class="detail" x="610" y="465">(TaxonomyCache)</text>
+
+  <!-- Arrows converging -->
+  <line class="arrow-a" x1="170" y1="480" x2="350" y2="560"/>
+  <line class="arrow-a" x1="450" y1="480" x2="450" y2="560"/>
+  <line class="arrow-b" x1="730" y1="480" x2="550" y2="560"/>
+
+  <!-- Oracle input -->
+  <rect class="box-b" x="620" y="530" width="250" height="60"/>
+  <text class="title" x="745" y="555" text-anchor="middle">Oracle (required)</text>
+  <text class="detail" x="745" y="575" text-anchor="middle">oracle_synthetic.csv: 997 users</text>
+  <line class="arrow-b" x1="620" y1="560" x2="560" y2="590"/>
+
+  <!-- Score Aggregation -->
+  <rect class="box-score" x="250" y="560" width="400" height="180"/>
+  <text class="title" x="450" y="585" text-anchor="middle">Score Aggregation</text>
+  <text class="detail" x="270" y="610">Group interests by category_id</text>
+  <text class="detail" x="270" y="635">Per category c:</text>
+  <text class="detail" x="270" y="655">  G_c = verified_count / total_count</text>
+  <text class="detail" x="270" y="675">  S_c = Σ(correct/backing) / total_count</text>
+  <text class="detail" x="270" y="700">IG_P = Σ G_c / |categories|</text>
+  <text class="detail" x="270" y="720">IG_R = Σ G_c / oracle_count</text>
+
+  <!-- Arrow down -->
+  <line class="arrow" x1="450" y1="740" x2="450" y2="780"/>
+
+  <!-- Final Output -->
+  <rect class="box-out" x="250" y="780" width="400" height="120"/>
+  <text class="title" x="450" y="805" text-anchor="middle">UserScore</text>
+  <text class="detail" x="270" y="830">ig_normalized = IG_F1 = HM(IG_P, IG_R)</text>
+  <text class="detail" x="270" y="855">is_normalized = mean(S_c) over verified</text>
+  <text class="detail" x="270" y="880">harmonic_mean = HM(IG_F1, IS)</text>
+
+  <!-- Persistence -->
+  <rect class="box" x="30" y="560" width="200" height="80"/>
+  <text class="title" x="130" y="585" text-anchor="middle">ResultsStore</text>
+  <text class="detail" x="130" y="605" text-anchor="middle">(SQLite)</text>
+  <text class="detail" x="130" y="625" text-anchor="middle">IG + IS + taxonomy</text>
+  <line class="arrow" x1="230" y1="600" x2="250" y2="620"/>
+
+</svg>
