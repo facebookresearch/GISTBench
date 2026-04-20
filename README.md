@@ -30,6 +30,8 @@ gistbench run -d data.csv -m gpt-4-turbo --results-db results.db  # scores all 3
 
 See [INSTRUCTIONS.md](INSTRUCTIONS.md) for full documentation.
 
+## [Link to Dataset](https://huggingface.co/datasets/facebook/gistbench)
+
 ## Smoke Test
 
 Validate the full pipeline (extraction → IG → IS → taxonomy → scoring) end to end. Both the bundled mock dataset and the real `synthetic` split ship with bundled oracles, so a single model run is enough.
