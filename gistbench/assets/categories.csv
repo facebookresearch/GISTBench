@@ -1,0 +1,326 @@
+category_id,category_name
+1,A.I. Art
+2,ASMR
+3,"Accidents, Emergencies & Tragedies"
+4,Aerospace Technology
+5,Aircraft
+6,Aliens & UFO
+7,Altruism & Giving
+8,American Football
+9,Animal Comedy
+10,Anime
+11,Archaeology
+12,Architecture
+13,Art Exhibits & Museums
+14,Art History
+15,Art Investment
+16,Artificial Intelligence
+17,Astrology & Divination
+18,Astronomy & Space Exploration
+19,Augmented Reality (AR) Filters
+20,Automobile Collections
+21,Automobile Reviews or Commentary
+22,Automotive Lifestyle
+23,Automotive Modifications
+24,Automotive Purchases
+25,Babies & Toddlers
+26,Backstage
+27,Baked Goods & Dessert
+28,Ball Sports
+29,Bands & Musicians
+30,Baseball
+31,Basketball
+32,Beachcombing & Treasure-Seeking
+33,Beauty Products
+34,Behind the Scenes
+35,Beverages
+36,Birds
+37,Birthdays
+38,Board Games
+39,Bugs & Insects
+40,Bushcraft
+41,Business & Financial News
+42,Business Strategy
+43,Buying a Home
+44,Camping
+45,Campus Comedy
+46,Card & Party Games
+47,Cartoon / Animation
+48,Celebrity Fandom
+49,Celebrity Fashion
+50,Celebrity Interviews
+51,Celebrity Lifestyle
+52,Celebrity Royals
+53,Celebrity Spotlight
+54,Children
+55,Children's Books
+56,Christmas
+57,Cities & Urban Exploration
+58,Citizen Journalism
+59,Classic Cars
+60,Classroom Instruction
+61,College Football
+62,Combat Sports & Martial Arts
+63,Comedy Challenges
+64,Comedy Dubbing
+65,Comedy Remixes
+66,"Comics, Manga & Graphic Novels"
+67,Competition / Reality Shows
+68,Competitions & Events
+69,Computers & Electronic Devices
+70,Concerts
+71,Cosplay & LARP
+72,Cover Songs
+73,Cryptids
+74,Cute Animals
+75,Cute Cats
+76,Cute Dogs
+77,"DIY Hacks, Tips & Tricks"
+78,DIY Restorations & Upscales
+79,Daily Life
+80,Dance Tutorials & Instructions
+81,Digital Commentary
+82,Disability
+83,"Displayables, Collectibles & Merch"
+84,Diving
+85,Documentary
+86,Drawing & Painting
+87,EMTs and Paramedics
+88,Early Education
+89,Ecology /Climatology
+90,Electric Vehicles
+91,Electronic Music
+92,Entertainment News
+93,Entrepreneurship & Small Business Ownership
+94,Epic Fails
+95,Event Planning & Venues
+96,Exotic Pets
+97,Extreme & Adventure Sports
+98,Fantasy & Mythology
+99,Farm Animals
+100,Farms & Ranches
+101,"Fashion, Dressing & Styling Tips"
+102,"Fast, Junk & Snack Food"
+103,Festivals & Traditions
+104,Firefighting
+105,Fishing
+106,Floral
+107,Food Cultivation
+108,Food Demo & Stills
+109,Food During Travel
+110,Food Recipes & Cooking Tips
+111,Food Review & Critique
+112,Formal Sciences
+113,"Furniture, Home Appliances & Household Goods"
+114,Game Merchandise
+115,Game Overview & Strategy
+116,Game Shows
+117,Gameplay
+118,Gaming Strategy
+119,Gardening & Planting
+120,Geek Fandom
+121,Get Ready with Me
+122,"Ghosts, Spirits & Hauntings"
+123,Golf
+124,Graphic Design
+125,Gymnastics
+126,Hair Care & Styling
+127,Halloween
+128,Health & Medical Sciences
+129,Health Reports & Updates
+130,Healthy Foods
+131,Healthy Living
+132,Heavy Machinery
+133,Hiking
+134,History
+135,Hobbies
+136,Hockey
+137,Holiday Decor
+138,Home Dance
+139,Home Renovations & Repairs
+140,Hot Takes
+141,House & Room Tours
+142,Humorous Moments
+143,Humorous Signs & Images
+144,Hunting
+145,Inspiring Quotes & Messages
+146,Instrumental Music
+147,Interior Design & Decoration
+148,Jewelry
+149,Jokes & Humorous Conversations
+150,Kawaii
+151,Kitchen & Cooking Hacks
+152,Kitchenware & Tabletop
+153,Knitting & Sewing
+154,Knowledge & Trivia
+155,Landscaping
+156,Language Learning
+157,Law Enforcement
+158,Leasing & Rental
+159,Leather Goods
+160,Lectures & Presentations
+161,Life Hacks
+162,Lifestyle & Urban Sports
+163,Lip-Syncing
+164,Literature & Fiction
+165,Live Streaming
+166,"Local, Regional or National Cuisine"
+167,Look at Me
+168,Luxury & Sports Cars
+169,Luxury Homes
+170,Machines & Power Tools
+171,Magazines & Newspapers
+172,Makeup Tutorials
+173,Marine Life
+174,Marriage & Marital Life
+175,Mechanical Engineering
+176,Medical Practitioners
+177,Memes
+178,Mental & Emotional Well-Being
+179,Metalworking
+180,Military & Veteran
+181,Mobile Games
+182,Money & Finance
+183,Motorcycles
+184,Motorsports & Cycling
+185,Movie & TV Casts
+186,Movie & TV Characters
+187,Movie & TV Clips or Stills
+188,Movies & TV Reviews or Commentary
+189,Mukbang
+190,Muscle & Strength Building
+191,Music Reviews or Commentary
+192,Music Tutorials & Instructions
+193,Music Videos
+194,Musicals
+195,Nail Art
+196,Natural Sciences
+197,Neurodiversity
+198,Newborn & Mommy
+199,Non-Fiction Books
+200,Nutrition & Diet
+201,Occult & Mysticism
+202,Online Courses
+203,Opera
+204,"Organization, Storage & Cleaning"
+205,Original Music
+206,Other Fine Art
+207,Other Sports
+208,Outdoor Activities
+209,Outdoor Equipment
+210,Outfit & Accessories
+211,Outfit of the Day (OOTD)
+212,Paper Crafts
+213,Parent & Child Relationship
+214,Parent Life
+215,Parenting Skills
+216,Personal Growth
+217,Pet Food & Nutrition
+218,Pet Health & Wellness
+219,Pet Rescue
+220,Pet Stories
+221,Pet Toys & Accessories
+222,Pet Training
+223,Photography
+224,Playground & Yard
+225,Podcasts
+226,Poetry
+227,Politics & Government
+228,Pranks
+229,Precision Sports
+230,Pregnancy
+231,Pro Wrestling
+232,Professional Development
+233,Public Health
+234,Puzzles & Mysteries
+235,Reaction Comedy
+236,Real Estate
+237,Recreational Vehicles
+238,Religious Holidays
+239,Restaurants & Eateries
+240,Road Trips
+241,Role-Playing Games
+242,Romantic Relationships & Dating
+243,Running
+244,SAR (Search and Rescue)
+245,Safety Cam Footage
+246,Satires & Spoofs
+247,Scenic Vistas
+248,"Schools, Colleges & Universities"
+249,Sci-Tech News
+250,Science Experiments
+251,Scripted Dramatic Content
+252,Sculpture
+253,Seasonal Trends
+254,Secular Holidays
+255,Shopping Guides
+256,Short Films
+257,Siblings & Other Family
+258,Sight-Seeing
+259,Singer & Dancer Stars
+260,Sketches & Skits
+261,Skills Building
+262,Skincare
+263,"Sleep, Meditation & Mindfulness"
+264,Slime-Making
+265,Small Apartments & Tiny Homes
+266,Smart & Eco-Homes
+267,Soap & Candle Making
+268,Soccer / Football
+269,Social & Friendship
+270,Social Media Challenges
+271,Social Science
+272,Software & Apps
+273,Song Parodies
+274,Special Occasions
+275,Spiritual & Religious
+276,Sports Equipment
+277,Sports News & Commentary
+278,Stand Up & Roasting
+279,Storytelling
+280,Storytime
+281,Street & Public Art
+282,Street Interviews & Performers
+283,Success Stories
+284,TV Variety & Talk Shows
+285,"Tattoos, Piercings & Body Art"
+286,Teachers & Teaching
+287,Tech Builds & Repairs
+288,Teenagers
+289,"Tennis, Pickleball & Racquetball"
+290,Theater & Stage Plays
+291,Theme Parks
+292,Toys
+293,Traditional & Cultural Sports
+294,Traditional & Culture Dance
+295,Traffic Reports & Updates
+296,Trains
+297,Travel Planning & Budgeting
+298,Travel Tips & Suggestions
+299,Traveling with Kids
+300,Trick Shots
+301,Trucks
+302,Unboxing
+303,Unexplained Phenomena
+304,Urban & Hip Hop Dance
+305,VR Gaming
+306,Vegetarian & Vegan
+307,Veterinarian
+308,Videography
+309,Vlogs
+310,Water Sports
+311,Watercraft
+312,Weather & Natural Disasters
+313,Web Series
+314,Wedding Ceremonies & Guests
+315,Wedding Essentials
+316,Weight Management
+317,Wild Animals
+318,Wilderness Exploration
+319,Winter Sports
+320,Woodworking
+321,Workouts & Training Regimens
+322,Workplace Humor
+323,Writers & Writing
+324,Yoga & Pilates
+325,eSports
